@@ -8,6 +8,7 @@ mkdir tables
 
 generation_failed = false
 ./generate-tables.sh
+echo "generation exited with $?"
 if [ $?!=0 ]; then
        generation_failed = true
 fi       
@@ -20,7 +21,7 @@ cd tables
 git init
 git add .
 git commit -m "Deploy tables"
-git push --force https://${GITHUB_TOKEN}:x-oauth-basic@github.com/clarin-eric/resource-families-html-generator.git HEAD:gh-pages > 1>&2
+git push --force https://${GITHUB_TOKEN}:x-oauth-basic@github.com/clarin-eric/resource-families-html-generator.git HEAD:gh-pages
 
 
 if [ $generation_failed ]; then
