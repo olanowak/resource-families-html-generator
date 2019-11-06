@@ -9,8 +9,6 @@ mkdir tables
 # generate tables
 generation_failed=false
 ./generate-tables.sh
-echo "generation exited with $?"
-
 # check if generated exited with 0
 if [ $?!=0 ]; then
        generation_failed=true
@@ -18,7 +16,6 @@ fi
 
 # check if correct branch
 if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "dev" ]; then exit 0; fi
-echo Tables generated
 
 # deploy to gh-pages
 cd tables
