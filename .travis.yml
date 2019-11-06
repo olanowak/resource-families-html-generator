@@ -1,12 +1,3 @@
 language: python
-deploy:
-- provider: script
-  script: bash ./deploy.sh
-  skip_cleanup: true
-  on:
-    branch: 
-    - dev
-notifications:
-  email:
-    on_success: change
-on_failure: always
+script: ./deploy.sh
+
