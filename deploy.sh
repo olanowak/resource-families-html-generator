@@ -6,6 +6,9 @@ git config --global user.name "Travis Bot"
 # generate tables
 mkdir tables
 
+echo "It works" > 1>&2
+
+
 generation_failed = false
 ./generate-tables.sh > 1>&2
 if [ $?!=0 ]; then
