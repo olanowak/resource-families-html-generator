@@ -7,13 +7,13 @@ git config --global user.name "Travis Bot"
 mkdir tables
 
 # generate tables
-generation_failed = false
+generation_failed=false
 ./generate-tables.sh
 echo "generation exited with $?"
 
 # check if generated exited with 0
 if [ $?!=0 ]; then
-       generation_failed = true
+       generation_failed=true
 fi      
 
 # check if correct branch
