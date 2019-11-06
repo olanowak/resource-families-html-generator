@@ -1,6 +1,4 @@
 language: python
-script:
-- "./generate-tables.sh"
 deploy:
 - provider: script
   script: bash ./deploy.sh
